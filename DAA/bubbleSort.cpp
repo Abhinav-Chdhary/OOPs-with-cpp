@@ -35,14 +35,24 @@ void display(int arr[], int n){
 }
 
 int main(){
-    int arr[10];
+    int arr[10], flag=1;
     cout << "Enter 10 numbers\n";
     for (size_t i = 0; i < 10; i++)
     {
-        cin>>arr[i];
+        try{
+            cin>>arr[i];
+            if(!arr[i])
+                throw arr[i];
+        }
+        catch(int x){
+            cout<<"Invalid value\n";
+            flag=0;
+        }
     }
-    nbubblesort(arr, 10);
-    display(arr, 10);
+    if(flag){
+        nbubblesort(arr, 10);
+        display(arr, 10);
+    }
     
     return 0;
 }
