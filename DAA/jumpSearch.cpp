@@ -5,7 +5,20 @@
 using namespace std;
 
 void jumpSearch(int arr[], int n, int target){
-    //to be written
+    int left=0, right=0, i=0, count=0;
+    while(right<n){
+        left = right;
+        right = pow(2, i++);
+    }
+    right = min(right, n-1);
+    for(int i=left; i<=right; i++){
+        count++;
+        if(arr[i]==target){
+            cout<<"Present "<<count<<"\n";
+            return;
+        }
+    }
+    cout<<"Not Present "<<count<<"\n";
 }
 
 int main()
