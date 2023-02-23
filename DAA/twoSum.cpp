@@ -1,15 +1,25 @@
+//week 2 question 2
 #include <iostream>
 #include <vector>
 using namespace std;
 
 void sequenceFinder(int arr[], int n){
-    vector<int> res;
     for(int i=0; i<n; i++){
         int x = arr[i];
         for(int j=i+1; j<n; j++){
-            //to be done
+            int y = arr[j];
+            for(int k=j+1; k<n; k++){
+                int z = arr[k];
+                if(z>x+y)   break;
+                if(x+y==z){
+                    cout<<i+1<<", "<<j+1<<", "<<k+1<<endl;
+                    //cout<<x<<", "<<y<<", "<<z<<endl;
+                    return;
+                }
+            }
         }
     }
+    cout<<"No sequence found\n";
 }
 
 int main()
