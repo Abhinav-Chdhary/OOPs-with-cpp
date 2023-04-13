@@ -1,19 +1,7 @@
 #include <iostream>
-#include <string>
 #include <vector>
-#include <algorithm>
-#define ll long long
+#include <string>
 using namespace std;
-
-void solve(vector<int> vec, int n, int z){
-    for(int i=0; i<n-1; i++){
-            if(vec[i]+vec[i+1]>=z){
-                cout<<"NO\n";
-                return;
-            }
-        }
-    cout<<"YES\n";
-}
 
 int main()
 {
@@ -23,19 +11,17 @@ int main()
     int t;
     cin>>t;
     while(t--){
-        int n;
+        int n, ans;
         cin>>n;
-        vector<int> vec(n, 0);
-        for(int i=0; i<n; i++){
-            cin>>vec[i];
+        int x = (n-1)/2;
+        if(n<3) ans=0;
+        else if(n%2){
+            ans=x*2+(x-1);
         }
-        sort(vec.begin(), vec.end());
-        int z = vec[n]+vec[n-1];
-        for(int i=0; i<n-1;){
-            swap(vec[i], vec[i+1]);
-            i+=2;
+        else{
+            ans = x*3;
         }
-        solve(vec, n, z);
+        cout<<ans<<endl;
     }
 
     return 0;
