@@ -3,6 +3,9 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "unordered_map": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "xiosbase": "cpp",
+        "xutility": "cpp",
+        "vector": "cpp"
     }
 }
