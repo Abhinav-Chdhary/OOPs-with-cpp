@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 /*
-Least Recently used page fault algo
+Optimal page fault algo
 */
 int checkHit(int mem[], int cap, int target)
 {
